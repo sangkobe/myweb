@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查理芒格100个思维模型</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .model-card {
+            border-left: 4px solid #4f46e5;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            .mobile-menu.open {
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-brain text-indigo-600 text-2xl mr-2"></i>
+                <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">查理芒格思维模型</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#general" class="nav-link text-gray-600 hover:text-indigo-600">通用模型</a>
+                <a href="#math" class="nav-link text-gray-600 hover:text-indigo-600">数理模型</a>
+                <a href="#system" class="nav-link text-gray-600 hover:text-indigo-600">系统模型</a>
+                <a href="#physics" class="nav-link text-gray-600 hover:text-indigo-600">物理模型</a>
+                <a href="#biology" class="nav-link text-gray-600 hover:text-indigo-600">生物模型</a>
+                <a href="#psychology" class="nav-link text-gray-600 hover:text-indigo-600">心理模型</a>
+                <a href="#others" class="nav-link text-gray-600 hover:text-indigo-600">其他模型</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4">
+            <div class="py-4 space-y-4">
+                <a href="#general" class="block py-2 text-gray-600 hover:text-indigo-600">通用模型</a>
+                <a href="#math" class="block py-2 text-gray-600 hover:text-indigo-600">数理模型</a>
+                <a href="#system" class="block py-2 text-gray-600 hover:text-indigo-600">系统模型</a>
+                <a href="#physics" class="block py-2 text-gray-600 hover:text-indigo-600">物理模型</a>
+                <a href="#biology" class="block py-2 text-gray-600 hover:text-indigo-600">生物模型</a>
+                <a href="#psychology" class="block py-2 text-gray-600 hover:text-indigo-600">心理模型</a>
+                <a href="#others" class="block py-2 text-gray-600 hover:text-indigo-600">其他模型</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 标题部分 -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">查理·芒格的100个思维模型</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">探索投资大师查理·芒格的多元思维模型，提升决策质量与认知能力</p>
+        </section>
+
+        <!-- 通用思维模型 -->
+        <section id="general" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">通用思维模型</h2>
+                <span class="category-badge bg-indigo-100 text-indigo-800 ml-3">10个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 模型卡片 -->
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 反向思考</h3>
+                    <p class="text-gray-600 mb-3">从结果反推解决方案，帮助发现正向思考易忽略的陷阱，用于投资决策、项目规划和风险管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在投资决策中，先考虑可能导致失败的因素，避免盲目投资。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 证伪原则</h3>
+                    <p class="text-gray-600 mb-3">科学理论需能被证伪，主动找反例可避免自我验证偏见，用于科学研究、商业决策等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在评估投资策略时，尝试寻找使其失效的情况。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 能力圈</h3>
+                    <p class="text-gray-600 mb-3">明确自己熟悉擅长的领域，避免涉足未知风险领域，用于投资、职业发展等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>巴菲特就因坚守能力圈，避开科技股泡沫而获利。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 奥卡姆剃刀</h3>
+                    <p class="text-gray-600 mb-3">选择假设少、更简单的解释，避免复杂分析麻痹决策，用于科学研究、商业决策等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在分析企业盈利模式时，优先选择简单清晰的解释。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 韩隆剃刀</h3>
+                    <p class="text-gray-600 mb-3">避免恶意揣测他人，多从无知、疏忽角度解释行为，用于职场、人际交往等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在工作中，不要轻易认为同事是故意犯错。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 二阶思维</h3>
+                    <p class="text-gray-600 mb-3">考虑行动的间接后果，防止短视，用于政策制定、投资、企业战略等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>如政府管控房租，可能导致房源减少等长期问题。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 地图非领土</h3>
+                    <p class="text-gray-600 mb-3">模型不等同于现实，应结合实际调整，用于使用各种模型、指标、理论时。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>公司管理中不能只盯着KPI而忽略实际情况。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 思想实验</h3>
+                    <p class="text-gray-600 mb-3">在头脑中推演问题，突破现实限制，用于科学研究、战略制定等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>常见的头脑风暴就是思想实验的一种。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 市场先生</h3>
+                    <p class="text-gray-600 mb-3">市场情绪多变，投资者应利用其波动，保持独立判断，用于投资和交易活动。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在市场暴跌时，逆向投资者可逢低买入。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">10. 概率思维</h3>
+                    <p class="text-gray-600 mb-3">用概率思考问题，评估风险与机会，用于决策分析、风险管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>投资时估算潜在回报的概率，而非简单判断成败。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数理思维模型 -->
+        <section id="math" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">数理思维模型</h2>
+                <span class="category-badge bg-blue-100 text-blue-800 ml-3">14个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 排列组合</h3>
+                    <p class="text-gray-600 mb-3">计算可能性，分析事件概率，用于项目管理、投资组合分析等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在项目规划中，计算不同方案的可能性。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 代数等价</h3>
+                    <p class="text-gray-600 mb-3">用符号表示数量关系，解决不同领域问题，用于公式推导、问题归类等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在解决数学和物理问题时常用。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 随机性</h3>
+                    <p class="text-gray-600 mb-3">认识到事件有运气成分，避免错误归因，用于投资、科学研究等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>投资中不能将成功或失败完全归因于自身能力。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 随机过程</h3>
+                    <p class="text-gray-600 mb-3">描述含随机成分的系统，用于金融工程、保险精算等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在金融市场分析中应用广泛。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 复利</h3>
+                    <p class="text-gray-600 mb-3">"利滚利"实现指数增长，用于投资理财、个人成长等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>长期投资中复利的效果显著。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 乘法为零效应</h3>
+                    <p class="text-gray-600 mb-3">关键环节失效会致整体失败，需关注关键薄弱环节，用于项目管理、企业运营等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>项目中某个关键环节出错可能导致整个项目失败。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 客户流失率</h3>
+                    <p class="text-gray-600 mb-3">系统中存在存量流失，需平衡保留与获取策略，用于涉及用户群、客户群的组织。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要关注客户流失情况并采取措施。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 大数定律</h3>
+                    <p class="text-gray-600 mb-3">样本大结果才稳定可靠，避免被小样本误导，用于投资、经营等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>不能仅凭少量数据就做出决策。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 正态分布</h3>
+                    <p class="text-gray-600 mb-3">多数普通现象符合"中庸多数、极端少数"模式，用于质量控制、自然现象统计等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在产品质量控制中可依据正态分布判断产品是否合格。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">10. 幂律分布</h3>
+                    <p class="text-gray-600 mb-3">部分值大且稀少，多数值小但常见，用于解释马太效应、创新投资等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>如互联网行业中少数大平台占据大量用户。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">11. 厚尾分布</h3>
+                    <p class="text-gray-600 mb-3">极端事件概率高于正态预测，需改进风险管理，用于金融投资、保险精算等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在金融投资中要考虑极端事件的影响。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">12. 贝叶斯更新</h3>
+                    <p class="text-gray-600 mb-3">依据新信息修正认知，提高决策质量，用于医疗诊断、机器学习等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在获得新数据后及时调整对事物的判断。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">13. 均值回归</h3>
+                    <p class="text-gray-600 mb-3">极端表现会向平均值回归，避免过度反应，用于评估绩效、制定激励等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在评估员工绩效时，不要因一次极端表现而过度奖励或惩罚。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">14. 数量级思维</h3>
+                    <p class="text-gray-600 mb-3">用指数尺度估计数量，快速决策，用于商业策划、科研等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在商业策划中，快速估算项目规模和收益。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 系统思维模型 -->
+        <section id="system" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">系统思维模型</h2>
+                <span class="category-badge bg-purple-100 text-purple-800 ml-3">20个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 规模效应</h3>
+                    <p class="text-gray-600 mb-3">系统特性随规模改变，避免线性外推，用于公司管理、政策制定等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>公司在扩大规模时要考虑规模效应带来的影响。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 收益递减规律</h3>
+                    <p class="text-gray-600 mb-3">投入增加，边际产出最终下降，用于资源配置、时间管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在资源分配时，避免过度投入导致收益下降。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 帕累托原则</h3>
+                    <p class="text-gray-600 mb-3">80%的效果来自20%的因素，聚焦关键少数，用于时间管理、产品管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在工作中，优先处理最重要的20%的任务。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 反馈回路与稳态</h3>
+                    <p class="text-gray-600 mb-3">正反馈导致增长或失控，负反馈维持系统平衡，用于控制系统设计、经济调控等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在经济调控中，利用负反馈维持经济稳定。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 混沌动力学</h3>
+                    <p class="text-gray-600 mb-3">初始条件微小差异会导致结果迥异，预测有局限性，用于长期规划、风险管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>长期规划中要考虑不确定性因素。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 累积优势</h3>
+                    <p class="text-gray-600 mb-3">领先者更易获优势，后来者需差异化发展，用于市场分析、创业等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>新企业进入市场时要寻找差异化竞争策略。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 涌现</h3>
+                    <p class="text-gray-600 mb-3">下层元素相互作用产生新性质，关注整体行为，用于复杂系统分析、公司文化塑造等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在公司管理中，关注团队成员互动产生的新效应。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 不可简化性</h3>
+                    <p class="text-gray-600 mb-3">有些目标有不可突破的下限，避免过度压缩资源，用于项目管理、个人成长等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在项目管理中，不能过度压缩资源导致目标无法实现。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 公地悲剧</h3>
+                    <p class="text-gray-600 mb-3">个体过度使用公共资源导致集体受损，需制定合作机制，用于资源管理、政策制定等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在资源管理中，要制定合理规则避免公地悲剧。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">10. 格雷欣法则</h3>
+                    <p class="text-gray-600 mb-3">不良品质挤压良好品质，制度设计需防范，用于制度和文化建设等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在制度设计中要防止不良现象的滋生。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">11. 算法</h3>
+                    <p class="text-gray-600 mb-3">流程化处理问题，减少随意性，用于计算机领域、业务流程管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在业务流程中，采用算法提高效率。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">12. 脆弱性 - 稳健性 - 反脆弱</h3>
+                    <p class="text-gray-600 mb-3">评估系统对变化的响应，提升系统应对能力，用于风险管理、组织建设等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要提高自身的反脆弱能力。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">13. 冗余备份</h3>
+                    <p class="text-gray-600 mb-3">为关键部分提供备份，应对不确定性，用于需要高可靠性的系统。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>如服务器备份以防止数据丢失。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">14. 安全边际</h3>
+                    <p class="text-gray-600 mb-3">预留富余量，确保安全，用于工程设计、投资理财等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在投资中预留安全边际，降低风险。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">15. 临界点</h3>
+                    <p class="text-gray-600 mb-3">系统状态跳变时，小努力可带来巨变，用于战略规划、风险管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在有利事物临界来临前要保持耐心。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">16. 网络效应</h3>
+                    <p class="text-gray-600 mb-3">产品价值随用户增加而提高，影响市场格局，用于分析商业模式、创业等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>社交媒体平台就是网络效应的典型例子。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">17. 黑天鹅事件</h3>
+                    <p class="text-gray-600 mb-3">罕见且影响巨大的不可预测事件，需保持安全边际和应变能力，用于风险管理、战略规划等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要对黑天鹅事件做好应对准备。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">18. 负面之道</h3>
+                    <p class="text-gray-600 mb-3">排除负面因素改进，减少错误，用于健康管理、产品设计等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在产品设计中，排除可能导致故障的因素。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">19. 林迪效应</h3>
+                    <p class="text-gray-600 mb-3">非易逝事物寿命预期与存续时间成正比，选择经时间考验的事物，用于选择学习内容、投资标的等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>选择历史悠久、口碑良好的投资标的。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">20. 复杂自适应系统</h3>
+                    <p class="text-gray-600 mb-3">系统能自我调整，用演化视角看问题，用于经济、管理、社会治理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要具备自我调整和适应环境变化的能力。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 物理世界模型 -->
+        <section id="physics" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">物理世界模型</h2>
+                <span class="category-badge bg-green-100 text-green-800 ml-3">9个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 热力学定律</h3>
+                    <p class="text-gray-600 mb-3">能量守恒且孤立系统熵增，用于工程、管理、个人生活等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在能源管理中遵循热力学定律。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 作用 - 反作用（互惠）</h3>
+                    <p class="text-gray-600 mb-3">力量成对出现，人际关系和商业交往中需考虑对方反应，用于谈判、外交等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在谈判中要考虑对方的回应。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 速度与速度矢量</h3>
+                    <p class="text-gray-600 mb-3">做事要兼顾效率和方向，用于战略规划、团队管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在团队管理中，要确保团队行动的方向和效率。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 相对性原理</h3>
+                    <p class="text-gray-600 mb-3">立场和视角影响认知，需换位思考，用于管理、国际交流等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在管理中要站在员工角度思考问题。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 活化能</h3>
+                    <p class="text-gray-600 mb-3">变革需克服惰性投入初始能量，用于启动项目、领导变革等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>启动新项目时要投入足够的精力和资源。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 催化剂</h3>
+                    <p class="text-gray-600 mb-3">加速反应且自身不被消耗，识别利用可事半功倍，用于管理、项目合作等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在项目合作中，寻找能够加速进展的因素。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 杠杆</h3>
+                    <p class="text-gray-600 mb-3">以小博大，借力解决问题，但要控制风险，用于创业、投资等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在创业中合理利用杠杆，但要注意风险控制。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 惯性</h3>
+                    <p class="text-gray-600 mb-3">物体和组织有保持当前状态的倾向，用于趋势分析、组织变革等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在组织变革中要克服惯性思维。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 合金效应</h3>
+                    <p class="text-gray-600 mb-3">不同要素组合产生协同增益，用于创新、管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在创新中，将不同元素组合创造新的价值。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 生物进化模型 -->
+        <section id="biology" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">生物进化模型</h2>
+                <span class="category-badge bg-yellow-100 text-yellow-800 ml-3">15个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 激励驱动</h3>
+                    <p class="text-gray-600 mb-3">生物对激励做出反应，设计良好激励机制可改变行为，用于管理、公共政策等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在企业管理中，设计合理的激励制度提高员工积极性。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 合作（共生）</h3>
+                    <p class="text-gray-600 mb-3">生物间合作可获更大利益，用于商业、职场、国际关系等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业间合作实现共赢。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 能量最小化倾向</h3>
+                    <p class="text-gray-600 mb-3">系统倾向节能，可优化流程，用于个人管理、流程设计等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在流程设计中，减少不必要的环节。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 适应</h3>
+                    <p class="text-gray-600 mb-3">物种通过遗传变异和自然选择适应环境，用于企业管理、个人发展等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要适应市场变化进行调整。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 自然选择</h3>
+                    <p class="text-gray-600 mb-3">"优胜劣汰"，适者生存，用于商业策略、投资等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在商业竞争中，只有适应市场的企业才能生存。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 红皇后效应</h3>
+                    <p class="text-gray-600 mb-3">不进则退，需持续改进，用于科技行业、个人职业发展等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在科技行业，企业要不断创新才能保持竞争力。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 复制</h3>
+                    <p class="text-gray-600 mb-3">生命基本属性，事物可通过复制传播，用于创业、企业管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>成功的商业模式可以进行复制推广。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 等级和组织本能</h3>
+                    <p class="text-gray-600 mb-3">多数生物群体有形成等级结构的倾向，管理中需趋利避害，用于企业管理、团队建设等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在团队建设中，合理利用等级结构提高效率。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 自我保存本能</h3>
+                    <p class="text-gray-600 mb-3">生物有求生和保护自己的本能，管理中需平衡约束，用于管理、谈判等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在管理中，要考虑员工的自我保护需求。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">10. 简单的生理奖惩</h3>
+                    <p class="text-gray-600 mb-3">生物趋利避害，可设计激励和戒除坏习惯，用于个人习惯培养、管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在个人习惯培养中，利用奖惩机制。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">11. 适应性挪用</h3>
+                    <p class="text-gray-600 mb-3">生物特征用途可改变，启发创新，用于创新、科研等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在科研中，从生物特征中获取创新灵感。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">12. 灭绝</h3>
+                    <p class="text-gray-600 mb-3">物种不适应环境会灭绝，提醒居安思危，用于战略、职场等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要居安思危，不断适应市场变化。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">13. 生态系统</h3>
+                    <p class="text-gray-600 mb-3">生物群落与环境相互作用，需系统视角管理，用于政策、企业经营等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业要考虑所处的商业生态系统。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">14. 生态位</h3>
+                    <p class="text-gray-600 mb-3">物种在生态系统中有特定角色和地位，企业和个人应找准定位，用于创业、职业规划等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>创业者要找准市场定位。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">15. 邓巴数</h3>
+                    <p class="text-gray-600 mb-3">人类亲密社交关系人数有限，组织设计需考虑规模，用于组织设计、人脉管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在组织设计中，控制团队规模。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 人性与决策心理模型 -->
+        <section id="psychology" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">人性与决策心理模型</h2>
+                <span class="category-badge bg-red-100 text-red-800 ml-3">21个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 信任</h3>
+                    <p class="text-gray-600 mb-3">社会合作基础，降低交易成本，需平衡信任与监督，用于商业合作、人际关系等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在商业合作中，建立信任关系但也要适度监督。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 激励偏差</h3>
+                    <p class="text-gray-600 mb-3">因激励机制导致的决策偏差，需合理设计激励制度，用于企业管理、政策制定等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在企业管理中，避免激励制度导致的短视行为。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 巴甫洛夫式联想</h3>
+                    <p class="text-gray-600 mb-3">基于条件反射的联想，影响决策和行为，用于营销、广告等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在营销中利用巴甫洛夫式联想吸引消费者。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 嫉妒与妒忌</h3>
+                    <p class="text-gray-600 mb-3">影响人际关系和决策，需正确引导和管理情绪，用于职场、社交等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在职场中，要正确处理嫉妒情绪。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 喜好/厌恶偏见</h3>
+                    <p class="text-gray-600 mb-3">基于个人喜好做出决策，需客观分析，用于消费、投资等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在投资中，避免因个人喜好而盲目投资。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 否认倾向</h3>
+                    <p class="text-gray-600 mb-3">拒绝接受现实，需正视问题，用于个人成长、企业危机处理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在企业危机中，不能否认问题的存在。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 易得性偏误</h3>
+                    <p class="text-gray-600 mb-3">根据容易获取的信息判断，需全面收集信息，用于决策、判断等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在决策时，不能只依赖容易获取的信息。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 代表性偏见</h3>
+                    <p class="text-gray-600 mb-3">根据典型特征判断，可能忽略其他因素，用于评估、判断等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在评估事物时，要综合考虑各种因素。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 从众心理</h3>
+                    <p class="text-gray-600 mb-3">受群体影响做出决策，需独立思考，用于消费、投资等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在投资中，避免盲目从众。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">10. 叙事本能</h3>
+                    <p class="text-gray-600 mb-3">喜欢听故事和构建叙事，可用于营销、传播等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在营销中，通过故事吸引消费者。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">11. 好奇本能</h3>
+                    <p class="text-gray-600 mb-3">驱动探索和学习，可用于教育、创新等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在教育中，激发学生的好奇心。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">12. 语言本能</h3>
+                    <p class="text-gray-600 mb-3">人类天生的语言能力，影响沟通和表达，用于交流、写作等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在交流中，提高语言表达能力。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">13. 首因效应</h3>
+                    <p class="text-gray-600 mb-3">第一印象影响判断，需客观评价，用于面试、交友等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在面试中，不能仅凭第一印象评价候选人。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">14. 以偏概全</h3>
+                    <p class="text-gray-600 mb-3">根据少量样本得出结论，需扩大样本量，用于判断、决策等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在决策时，不能以偏概全。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">15. 相对满足/错反</h3>
+                    <p class="text-gray-600 mb-3">根据相对情况判断满足感，需关注绝对价值，用于消费、比较等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在消费中，不能只看相对价格。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">16. 过度自信</h3>
+                    <p class="text-gray-600 mb-3">高估自己能力和判断，需保持谦虚和理性，用于投资、决策等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在投资中，避免过度自信导致的风险。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">17. 损失厌恶</h3>
+                    <p class="text-gray-600 mb-3">对损失更敏感，影响决策，需理性对待损失，用于投资、交易等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在投资中，不能因害怕损失而错过机会。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">18. 锚定效应</h3>
+                    <p class="text-gray-600 mb-3">受初始信息影响判断，需调整参考标准，用于谈判、定价等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在谈判中，避免被初始价格锚定。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">19. 框架效应</h3>
+                    <p class="text-gray-600 mb-3">根据不同表述方式做出决策，需全面分析，用于营销、政策宣传等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在营销中，合理运用框架效应。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">20. 心理账户</h3>
+                    <p class="text-gray-600 mb-3">对不同资金有不同态度，需统一看待，用于消费、投资等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在消费和投资中，避免心理账户的影响。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">21. 自我控制</h3>
+                    <p class="text-gray-600 mb-3">控制冲动和欲望，实现长期目标，用于个人成长、管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在个人成长中，提高自我控制能力。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 其他思维模型 -->
+        <section id="others" class="mb-16">
+            <div class="flex items-center mb-6">
+                <h2 class="text-2xl font-bold">其他思维模型</h2>
+                <span class="category-badge bg-gray-100 text-gray-800 ml-3">12个</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">1. 机会成本思维模型</h3>
+                    <p class="text-gray-600 mb-3">为选择某一方案而放弃的其他潜在收益的最大值，用于企业资源分配、个人职业选择等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在做决策时，考虑机会成本。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">2. 直觉思维模型</h3>
+                    <p class="text-gray-600 mb-3">不用经过太多思考过程，快速做出判断，与右脑连结，受生存演化压力影响，用于快速决策、应急处理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在紧急情况下，可依靠直觉做出决策。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">3. 局部最优与全局最优思维模型</h3>
+                    <p class="text-gray-600 mb-3">优化问题的局部最优解是临近解集合中的最优解，全局最优是所有可能解中的最优解，用于项目规划、资源分配等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在项目规划中，要追求全局最优而非局部最优。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">4. 决策树思维模型</h3>
+                    <p class="text-gray-600 mb-3">通过树状图量化不同决策路径的风险与收益，用于企业新市场进入策略、个人购房贷款方案选择等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在决策时，使用决策树分析各种可能性。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">5. 沉没成本思维模型</h3>
+                    <p class="text-gray-600 mb-3">已投入且不可回收的成本，不影响未来决策，用于终止亏损项目、个人放弃无益关系等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在面对沉没成本时，要果断放弃。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">6. 效率思维模型</h3>
+                    <p class="text-gray-600 mb-3">单位时间价值最大化，用于制造业精益生产、个人时间管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在工作和生活中，提高效率。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">7. 时光机思维模型</h3>
+                    <p class="text-gray-600 mb-3">利用区域发展不平衡复制成功模式，用于跨国企业新兴市场扩张等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>企业可借鉴其他地区的成功经验。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">8. 不平衡性思维模型</h3>
+                    <p class="text-gray-600 mb-3">事物发展存在自身和空间的不平衡性，具有不可逆性，用于发现机会、制定战略等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在市场中寻找不平衡带来的机会。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">9. 非sr思维模型</h3>
+                    <p class="text-gray-600 mb-3">将被动的刺激 - 反应模式转变为主动思考后的选择 - 反应，用于克服冲动消费、提高决策质量等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在消费时，避免冲动行为。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">10. 隐含前提思维模型</h3>
+                    <p class="text-gray-600 mb-3">一个人有的很多观念、情绪、行为源自隐含前提，会随时间和空间变化，用于自我认知、人际关系等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>了解自己和他人的隐含前提。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">11. 破束缚思维模型</h3>
+                    <p class="text-gray-600 mb-3">突破前提、时空、格局等束缚，用于创新、变革等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在创新中，打破传统束缚。</p>
+                </div>
+                
+                <div class="glass-card p-6 model-card">
+                    <h3 class="text-lg font-semibold mb-2">12. 卡尼曼双系统思维模型</h3>
+                    <p class="text-gray-600 mb-3">系统1无意识思考，系统2需要耗费精力，避免大脑本能决策，用于消费决策、危机管理等。</p>
+                    <p class="text-sm text-gray-500"><span class="font-medium">应用示例：</span>在决策时，根据情况合理运用两个系统。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>created by <a href="https://space.coze.cn" class="text-indigo-600 hover:text-indigo-800">coze space</a></p>
+            <p class="mt-2">页面内容均由 AI 生成，仅供参考</p>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        const icon = mobileMenuButton.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
